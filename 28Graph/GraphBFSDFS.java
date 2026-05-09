@@ -1,3 +1,4 @@
+package DSA28Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -38,7 +39,6 @@ public class GraphBFSDFS {
 
         graph[6].add(new Edge(6,5,1));
     }
-
     public static void bfs(ArrayList<Edge> graph[]){ //O(n)
         Queue<Integer> q = new LinkedList<>();
         boolean vis[] = new boolean[graph.length];
@@ -71,7 +71,7 @@ public class GraphBFSDFS {
             return true;
         }
         vis[src]=true;
-        for(int i=0;i<graph[src].size();i++){
+        for(int i=0;i<graph[src].size(); i++){
             Edge e=graph[src].get(i);
             if(!vis[e.dest]&&hasPath(graph, e.dest, dest, vis));
             return true;
