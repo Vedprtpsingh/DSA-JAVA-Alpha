@@ -1,4 +1,4 @@
-public class FibonacciUsingMemorization {
+public class _01FibonacciUsingMemorization {
         public static int fib(int n, int dp[]) {
         if (n == 1 || n == 0) {
             return n;

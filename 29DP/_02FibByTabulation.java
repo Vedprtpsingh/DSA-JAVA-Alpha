@@ -1,5 +1,5 @@
 java
-public class FibByTabulation {
+public class _02FibByTabulation {
     // 2. Tabulation Approach (Bottom-Up) - O(n)
     public static int fibTabulation(int n) {
         int dp[] = new int[n+1];

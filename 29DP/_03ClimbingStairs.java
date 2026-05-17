@@ -1,6 +1,6 @@
 // same as it is fib
 
-class ClimbingStairs
+class _03ClimbingStairs
 {
     public static int steps(int n,int dp[]){
         if(n<0){
@@ -22,3 +22,5 @@ class ClimbingStairs
 	    System.out.println(steps(n,dp));
 	}
 }
+
+
