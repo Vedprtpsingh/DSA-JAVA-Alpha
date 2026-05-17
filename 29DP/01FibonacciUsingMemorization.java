@@ -1,20 +1,18 @@
 public class FibonacciUsingMemorization {
-    public static int fib(int n, int f[]) {
-        if(n == 0 || n == 1) {
+        public static int fib(int n, int dp[]) {
+        if (n == 1 || n == 0) {
             return n;
         }
-        
-        if(f[n] != 0) { //fib(n) is already calculated
-            return f[n];
+        if (dp[n] != 0) {
+            return dp[n];
         }
-        
-        f[n] = fib(n-1, f) + fib(n-2, f);
-        return f[n];
+        dp[n] = fib(n - 1, dp) + fib(n - 2, dp);
+        return dp[n];
     }
-
-    public static void main(String args[]) {
+    public static void main(String[] args)
+    {
         int n = 5;
-        int f[] = new int[n+1]; // 0, 0, 0, 0
-        System.out.println(fib(n, f));
+        int dp[] = new int[n];
+        System.out.println(fib(n, dp));
     }
 }
