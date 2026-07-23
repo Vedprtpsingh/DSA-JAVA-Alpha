@@ -57,6 +57,34 @@ class BuildingsegTree {
         return left + right;
     }
 
+
+    public static void update(int arr[], int idx, int newVal) {
+
+    int diff = newVal - arr[idx];
+    arr[idx] = newVal;
+
+    updateUtil(0, 0, arr.length - 1, idx, diff);
+}
+
+
+    public static void updateUtil(int i, int si, int sj, int idx, int diff) {
+
+    // No overlap
+    if (idx < si || idx > sj) {
+        return;
+    }
+
+    // Update current node
+    tree[i] += diff;
+
+    // If not a leaf node
+    if (si != sj) {
+        int mid = (si + sj) / 2;
+
+        updateUtil(2 * i + 1, si, mid, idx, diff);
+        updateUtil(2 * i + 2, mid + 1, sj, idx, diff);
+    }
+}
     public static void main(String[] args) {
 
         int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
